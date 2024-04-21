@@ -33,6 +33,14 @@ public class Ball : MonoBehaviour
         AddStartingForce();
     }
 
+    void OnCollisionEnter2D(Collision2D coll) 
+    {
+        if (coll.transform.CompareTag("Brick")) {
+            Destroy(coll.gameObject);
+        }
+        Debug.Log("Ball has hit paddle" + coll.transform.tag);
+    }
+
     private void AddStartingForce()
     {
         float x = Random.value < 0.5f ? Random.Range(-0.5f, -1.0f) :
