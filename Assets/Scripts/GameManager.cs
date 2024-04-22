@@ -1,16 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public Ball ball;
+    private int _numLives = 3;
+    public int NumLives { 
+        get { return _numLives; } 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DeathAndReset()
     {
-        
+        _numLives--;
+        if (_numLives <= 0) {
+            Debug.Log("Game end");
+        }
+        Debug.Log(_numLives);
+
+        ball.ResetBall();
+    }
+
+    public void ResetGame()
+    {
+        _numLives = 3;
+        ball.ResetBall();
     }
 }
