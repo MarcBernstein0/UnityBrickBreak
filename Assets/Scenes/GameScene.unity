@@ -656,7 +656,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 1795513243}
   lives: {fileID: 705104549}
-  score: {fileID: 0}
 --- !u!1001 &111415050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10784,6 +10783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 200
   BallPosition: {fileID: 284386815}
+  score: {fileID: 342485636}
 --- !u!50 &1795513244
 Rigidbody2D:
   serializedVersion: 4

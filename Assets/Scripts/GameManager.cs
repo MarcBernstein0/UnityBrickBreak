@@ -13,8 +13,11 @@ public class GameManager : MonoBehaviour
     }
     public Ball ball;
     public Text lives;
-    public Text score;
 
+    void Awake()
+    {
+        Score.score = 0;
+    }
     public void DeathAndReset()
     {
         _numLives--;

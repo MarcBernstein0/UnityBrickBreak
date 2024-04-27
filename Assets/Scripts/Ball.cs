@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Ball : MonoBehaviour
     public float Speed = 200.0f;
     // public Vector2 start_pos = new Vector2(0.0f, -1.5f);
     public Transform BallPosition;
+    public Text score;
+
 
 
 
@@ -41,6 +44,8 @@ public class Ball : MonoBehaviour
     {
         if (coll.transform.CompareTag("Brick"))
         {
+            Score.score += 10;
+            score.text = "Score: " + Score.score.ToString();
             Destroy(coll.gameObject);
         }
         Debug.Log("Ball has hit" + coll.gameObject.tag);
