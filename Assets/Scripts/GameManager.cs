@@ -7,15 +7,18 @@ public class GameManager : MonoBehaviour
 
     public Ball ball;
     private int _numLives = 3;
-    public int NumLives { 
-        get { return _numLives; } 
+    public int NumLives
+    {
+        get { return _numLives; }
     }
 
     public void DeathAndReset()
     {
         _numLives--;
-        if (_numLives <= 0) {
+        if (_numLives <= 0)
+        {
             Debug.Log("Game end");
+            Time.timeScale = 0f;
         }
         Debug.Log(_numLives);
 
