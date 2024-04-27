@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 
-    public Ball ball;
     private int _numLives = 3;
     public int NumLives
     {
         get { return _numLives; }
     }
+    public Ball ball;
+    public Text lives;
+    public Text score;
 
     public void DeathAndReset()
     {
@@ -21,6 +24,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0f;
         }
         Debug.Log(_numLives);
+        lives.text = "Lives: " + _numLives.ToString();
 
         ball.ResetBall();
     }
